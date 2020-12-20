@@ -11,6 +11,27 @@
 <br>
 
 
+PyAutoGUI
+=========
+
+PyAutoGUI is a  cross-platform GUI automation Python module for human beings. Used to programmatically control the mouse & keyboard.
+
+
+
+Full documentation available at https://pyautogui.readthedocs.org
+
+
+You Can Read Full documentation here : <a href="https://github.com/Kushal997-das/Pyautogui-module-using-audio/blob/master/documents/pyautogui-readbook.pdf"> documentation</a>
+
+
+Pre-requisites:
+--------------
+    Python
+    pyautogui
+Installation:
+------------
+
+     $ pip install folium
 
 
 
