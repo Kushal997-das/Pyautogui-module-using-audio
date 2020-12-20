@@ -145,17 +145,17 @@ pyautogui.click(buttonx, buttony)  # clicks the center of where the button was f
 
 
 # I used below functions with the all modules (pyautogui,pyttsx3,speech_recognition,colored)
-         #1 : dragto(drag  mouse cursor)
-         #2 : maximize(maximize your window)
-         #3 : minimize(minimize your window)
-         #4 : current title(To Get Current window title) 
-         #5 : getalltitle(To getall the current opening application)
-         #6 : getinfo(To get all information about your window) 
-         #7 : size(To get  current window screen size)
-         #8 : position(To get exact screen position)
-         #9 : livemouseposition(To get the Live Mouse Position)
-         #10: move to(To get the specific point on your screen)
-         #11: click(This will perform the click task)
+         - 1 : dragto(drag  mouse cursor)
+         - 2 : maximize(maximize your window)
+         - 3 : minimize(minimize your window)
+         - 4 : current title(To Get Current window title) 
+         - 5 : getalltitle(To getall the current opening application)
+         - 6 : getinfo(To get all information about your window) 
+         - 7 : size(To get  current window screen size)
+         - 8 : position(To get exact screen position)
+         - 9 : livemouseposition(To get the Live Mouse Position)
+         - 10: move to(To get the specific point on your screen)
+         - 11: click(This will perform the click task)
          
 See the Source code from <a href='https://github.com/Kushal997-das/Pyautogui-module-using-audio/blob/master/pyauto.py'>  here </a> <br>
  
