@@ -159,7 +159,7 @@ Final program:
   - 10: move to(To get the specific point on your screen)
   - 11: click(This will perform the click task)
          
-See the Source code from <a href='https://github.com/Kushal997-das/Pyautogui-module-using-audio/blob/master/pyauto.py'>  here </a> <br>
+Source code available at <a href='https://github.com/Kushal997-das/Pyautogui-module-using-audio/blob/master/pyauto.py'>  here </a> <br>
  
 Watch full video https://youtu.be/ZLM7glLn7ls <br><br>
 
