@@ -33,6 +33,12 @@ Full documentation available at https://pypi.org/project/pyttsx3/
 
 Full documentation available at https://pypi.org/project/SpeechRecognition/
 
+# colored
+
+> Very simple Python library for color and formatting in terminal. Collection of color codes and names for 256 color terminal setups.
+
+Full documentation available at https://pypi.org/project/colored/
+
 
 Pre-requisites:
 --------------
@@ -54,6 +60,9 @@ Installation:
 ### Importing module:
 ```python3
 import pyautogui
+import pyttsx3
+import speech_recognition
+import colored
 ```
 
 
@@ -105,39 +114,33 @@ speak('Thank You we save your details')
 
 ```
 
-<img align='center' alt='png' width='300px' src=" https://github.com/Kushal997-das/Pyautogui-module-using-audio/blob/master/documents/gif1.gif"/>
+<img align='center' alt='Demo' width='300px' src="https://github.com/Kushal997-das/Pyautogui-module-using-audio/blob/master/documents/gif2.gif"/>
+
+#### That's how the map look like after executing the code. <br>
+
+Download full demo with audio from <a href="https://github.com/Kushal997-das/Pyautogui-module-using-audio/blob/master/documents/file.mp4">here</a>
 
 
 
 
-Screenshot Functions
+Screenshot Functions using pyautogui :
 --------------------
 
-(PyAutoGUI uses Pillow for image-related features.)
+
 ```python
-    >>> import pyautogui
-    >>> im1 = pyautogui.screenshot()
-    >>> im1.save('my_screenshot.png')
-    >>> im2 = pyautogui.screenshot('my_screenshot2.png')
+import pyautogui
+im1 = pyautogui.screenshot()
+im1.save('my_screenshot.png')
+im2 = pyautogui.screenshot('my_screenshot2.png')
 ```
 You can also locate where an image is on the screen:
 ```python
-    >>> import pyautogui
-    >>> button7location = pyautogui.locateOnScreen('button.png') # returns (left, top, width, height) of matching region
-    >>> button7location
-    (1416, 562, 50, 41)
-    >>> buttonx, buttony = pyautogui.center(button7location)
-    >>> buttonx, buttony
-    (1441, 582)
-    >>> pyautogui.click(buttonx, buttony)  # clicks the center of where the button was found
-```
-The locateCenterOnScreen() function returns the center of this match region:
-```python
-    >>> import pyautogui
-    >>> buttonx, buttony = pyautogui.locateCenterOnScreen('button.png') # returns (x, y) of matching region
-    >>> buttonx, buttony
-    (1441, 582)
-    >>> pyautogui.click(buttonx, buttony)  # clicks the center of where the button was found
+import pyautogui
+location = pyautogui.locateOnScreen('button.png') # returns (left, top, width, height) of matching region
+print(location)
+buttonx, buttony = pyautogui.center(button7location)
+print(buttonx, buttony)
+pyautogui.click(buttonx, buttony)  # clicks the center of where the button was found
 ```
 
 
