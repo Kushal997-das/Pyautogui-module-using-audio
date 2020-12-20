@@ -14,35 +14,41 @@
 PyAutoGUI
 =========
 
-PyAutoGUI is a  cross-platform GUI automation Python module for human beings. Used to programmatically control the mouse & keyboard.
-
-
+> PyAutoGUI is a  cross-platform GUI automation Python module for human beings. Used to programmatically control the mouse & keyboard. <br>
 
 Full documentation available at https://pyautogui.readthedocs.org
 
 
 You Can Read Full documentation here : <a href="https://github.com/Kushal997-das/Pyautogui-module-using-audio/blob/master/documents/pyautogui-readbook.pdf"> documentation</a>
 
+# Pyttsx3
+
+
+> pyttsx3 is a text-to-speech conversion library in Python. Unlike alternative libraries, it works offline, and is compatible with both Python 2 and 3. 
+
+Full documentation available at https://pypi.org/project/pyttsx3/
+
+# speech_recognition
+> Speech recognition means that when humans are speaking, a machine understands it. speech recognition system needs to do is convert the audio signal into a form a computer can understand. 
+
+Full documentation available at https://pypi.org/project/SpeechRecognition/
+
 
 Pre-requisites:
 --------------
-    Python
+    Python3
     pyautogui
+    pyttsx3
+    speech_recognition
+    colored
 Installation:
 ------------
 
-     $ pip install folium
-
-Dependencies
-============
-
-PyAutoGUI supports Python 2 and 3. If you are installing PyAutoGUI from PyPI using pip:
-
-Windows has no dependencies. The Win32 extensions do not need to be installed.
-
-macOS needs the rubicon-objc module installed (in that order).
-
-Linux needs the python3-xlib (or python-xlib for Python 2) module installed.
+     $ pip install pyautogui
+     $ pip install pyttsx3
+     $ pip install SpeechRecognition
+     $ pip install colored
+     
 
 
 ### Importing module:
@@ -54,32 +60,85 @@ import pyautogui
 ## Mouse and keyboard automation using Python:
 In this we know how to automate movements of mouse and keyboard using pyautogui module in python. 
 ```python
-     import pyautogui
-     screenWidth, screenHeight = pyautogui.size() # Returns two integers, the width and height of the screen. (The primary monitor, in multi-monitor setups.)
-     currentMouseX, currentMouseY = pyautogui.position() # Returns two integers, the x and y of the mouse cursor's current position.
-     pyautogui.moveTo(100, 150) # Move the mouse to the x, y coordinates 100, 150.
-     pyautogui.click() # Click the mouse at its current location.
-     pyautogui.click(200, 220) # Click the mouse at the x, y coordinates 200, 220.
-     pyautogui.move(None, 10)  # Move mouse 10 pixels down, that is, move the mouse relative to its current position.
-     pyautogui.doubleClick() # Double click the mouse at the
-     pyautogui.moveTo(500, 500, duration=2, tween=pyautogui.easeInOutQuad) # Use tweening/easing function to move mouse over 2 seconds.
-     pyautogui.write('Hello world!', interval=0.25)  # Type with quarter-second pause in between each key.
-     pyautogui.press('esc') # Simulate pressing the Escape key.
-     pyautogui.keyDown('shift')
-     pyautogui.write(['left', 'left', 'left', 'left', 'left', 'left'])
-     pyautogui.keyUp('shift')
-     pyautogui.hotkey('ctrl', 'c')
+  import pyautogui
+  screenWidth, screenHeight = pyautogui.size() # Returns two integers, the width and height of the screen. (The primary monitor, in multi-monitor setups.)
+  currentMouseX, currentMouseY = pyautogui.position() # Returns two integers, the x and y of the mouse cursor's current position.
+  pyautogui.moveTo(100, 150) # Move the mouse to the x, y coordinates 100, 150.
+  pyautogui.click() # Click the mouse at its current location.
+  pyautogui.click(200, 220) # Click the mouse at the x, y coordinates 200, 220.
+  pyautogui.move(None, 10)  # Move mouse 10 pixels down, that is, move the mouse relative to its current position.
+  pyautogui.doubleClick() # Double click the mouse at the
+  pyautogui.moveTo(500, 500, duration=2, tween=pyautogui.easeInOutQuad) # Use tweening/easing function to move mouse over 2 seconds.
+  pyautogui.write('Hello world!', interval=0.25)  # Type with quarter-second pause in between each key.
+  pyautogui.press('esc') # Simulate pressing the Escape key.
+  pyautogui.keyDown('shift')
+  pyautogui.write(['left', 'left', 'left', 'left', 'left', 'left'])
+  pyautogui.keyUp('shift')
+  pyautogui.hotkey('ctrl', 'c')
 ```
 
+Display Message Boxes using pyautogui and pyttsx3 :
+---------------------
+
+```python3
+import pyautogui,pyttsx3
+# Speaks The Audio.
+engine = pyttsx3.init('sapi5')
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[1].id)
+
+def speak(audio):
+    engine.say(audio)
+    engine.runAndWait()    
+speak('Hey! This is an alert box :')    
+pyautogui.alert('This is an alert box :D.')
+speak('Shall I proceed?')
+pyautogui.confirm('Shall I proceed?')
+speak(' Please Enter your option')
+pyautogui.confirm('please Enter your option.', buttons=['K', 'L', 'P'])
+speak('What is your name?')
+speak('please Enter your name')
+pyautogui.prompt('What is your name?')
+speak("Enter password \n and don't worry text will be hidden")
+pyautogui.password('Enter password (text will be hidden)')
+speak('Thank You we save your details')
+
+```
+
+<img align='center' alt='png' width='300px' src=" https://github.com/Kushal997-das/Pyautogui-module-using-audio/blob/master/documents/gif1.gif"/>
 
 
 
 
+Screenshot Functions
+--------------------
 
-
-
-
-
+(PyAutoGUI uses Pillow for image-related features.)
+```python
+    >>> import pyautogui
+    >>> im1 = pyautogui.screenshot()
+    >>> im1.save('my_screenshot.png')
+    >>> im2 = pyautogui.screenshot('my_screenshot2.png')
+```
+You can also locate where an image is on the screen:
+```python
+    >>> import pyautogui
+    >>> button7location = pyautogui.locateOnScreen('button.png') # returns (left, top, width, height) of matching region
+    >>> button7location
+    (1416, 562, 50, 41)
+    >>> buttonx, buttony = pyautogui.center(button7location)
+    >>> buttonx, buttony
+    (1441, 582)
+    >>> pyautogui.click(buttonx, buttony)  # clicks the center of where the button was found
+```
+The locateCenterOnScreen() function returns the center of this match region:
+```python
+    >>> import pyautogui
+    >>> buttonx, buttony = pyautogui.locateCenterOnScreen('button.png') # returns (x, y) of matching region
+    >>> buttonx, buttony
+    (1441, 582)
+    >>> pyautogui.click(buttonx, buttony)  # clicks the center of where the button was found
+```
 
 
 
