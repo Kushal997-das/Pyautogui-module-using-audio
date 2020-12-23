@@ -9,8 +9,6 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/Kushal997-das/Pyautogui-module-using-audio)
 
 <br>
-
-
 PyAutoGUI
 =========
 
