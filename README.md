@@ -9,6 +9,7 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/Kushal997-das/Pyautogui-module-using-audio)
 
 <br>
+
 PyAutoGUI
 =========
 > PyAutoGUI is a  cross-platform GUI automation Python module for human beings. Used to programmatically control the mouse & keyboard. <br>
